@@ -25,7 +25,7 @@ data "template_cloudinit_config" "config" {
         content: ${var.docker_compose_file}
         permissions: '0644'
       runcmd:
-        - [chmod, -R, ubuntu.ubuntu, /home/ubuntu/ ]
+        - [chown, -R, ubuntu.ubuntu, /home/ubuntu/ ]
         - [ cd, /home/ubuntu/wireguard ]
         - [ docker-compose, up, -d ]
     EOF
