@@ -65,6 +65,12 @@ variable "dex_listening_tcp_port" {
   default = 8090
 }
 
+variable "additional_security_group_ids" {
+  type        = list(string)
+  default     = [""]
+  description = "Additional security groups if provided, default empty"
+}
+
 variable "volume_size" {
   description = "Volume size for ec2 instance"
   type = number

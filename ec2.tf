@@ -15,7 +15,7 @@ resource "aws_instance" "instance" {
   ami                         = coalesce(var.ec2_ami_id, data.aws_ami.ami.image_id)
   instance_type               = var.ec2_instance_type
   key_name                    = var.ssh_key_name
-  security_groups             = [aws_security_group.vpn.name]
+  vpc_security_group_ids      = length(compact(var.additional_security_group_ids)) != 0 ? concat([aws_security_group.vpn.id], var.additional_security_group_ids) : [aws_security_group.vpn.id]
   associate_public_ip_address = true
 
   user_data_base64 = data.template_cloudinit_config.config.rendered
