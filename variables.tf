@@ -50,13 +50,11 @@ variable "ec2_ami_id" {
 variable "wg_access_server_listening_tcp_port" {
   description = "The TCP port where wg-access-server should listen on"
   type = number
-  default = 8080
 }
 
 variable "wg_access_server_listening_udp_port" {
   description = "The UDP port where wg-access-server should listen on"
   type = number
-  default = 51820
 }
 
 variable "dex_listening_tcp_port" {
