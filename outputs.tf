@@ -1,5 +1,5 @@
 output "public_ip" {
-  value = aws_eip.wg_dex.address
+  value = aws_eip.wg_dex.public_ip
 }
 
 output "ec2_instance_id" {
