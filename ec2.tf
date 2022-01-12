@@ -17,6 +17,7 @@ resource "aws_instance" "instance" {
   key_name                    = var.ssh_key_name
   vpc_security_group_ids      = length(compact(var.additional_security_group_ids)) != 0 ? concat([aws_security_group.vpn.id], var.additional_security_group_ids) : [aws_security_group.vpn.id]
   associate_public_ip_address = true
+  subnet_id = var.vpc_subnet_id
 
   user_data_base64 = data.template_cloudinit_config.config.rendered
 
