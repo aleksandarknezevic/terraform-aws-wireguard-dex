@@ -85,3 +85,8 @@ variable "wg_access_server_config" {
   description = "base64 encoded config file for wg access server"
   type = string
 }
+
+variable "docker_compose_file" {
+  description = "Base64 encoded docker-compose.yaml file"
+  type = string
+}
