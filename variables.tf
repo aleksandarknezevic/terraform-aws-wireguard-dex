@@ -80,3 +80,10 @@ variable "ssh_key_name" {
   description = "SSH RSA Keypair name"
   type = string
 }
+
+# Config details
+
+variable "wg_access_server_config" {
+  description = "base64 encoded config file for wg access server"
+  type = string
+}
