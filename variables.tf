@@ -89,3 +89,8 @@ variable "docker_compose_file" {
   description = "Base64 encoded docker-compose.yaml file"
   type = string
 }
+
+variable "dex_config" {
+  description = "base64 encoded config file for dex server"
+  type = string
+}

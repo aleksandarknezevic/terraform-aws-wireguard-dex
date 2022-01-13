@@ -20,6 +20,10 @@ data "template_cloudinit_config" "config" {
         encoding: b64
         content: ${var.wg_access_server_config}
         permissions: '0644'
+      - path: /home/ubuntu/wireguard/dex-config.yaml
+        encoding: b64
+        content: ${var.dex_config}
+        permissions: '0644'
       - path: /home/ubuntu/wireguard/docker-compose.yaml
         encoding: b64
         content: ${var.docker_compose_file}
