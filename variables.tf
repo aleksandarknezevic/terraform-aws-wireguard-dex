@@ -60,7 +60,6 @@ variable "wg_access_server_listening_udp_port" {
 variable "dex_listening_tcp_port" {
   description = "The TCP port where dex server should listen on"
   type = number
-  default = 8090
 }
 
 variable "additional_security_group_ids" {
