@@ -94,3 +94,18 @@ variable "dex_config" {
   description = "base64 encoded config file for dex server"
   type = string
 }
+
+variable "nginx_certbot_env" {
+  description = "File for env variable for nginx"
+  type = string
+}
+
+variable "nginx_dex_config" {
+  description = "Nginx config for dex"
+  type = string
+}
+
+variable "nginx_wg_config" {
+  description = "Nginx config for wg"
+  type = string
+}

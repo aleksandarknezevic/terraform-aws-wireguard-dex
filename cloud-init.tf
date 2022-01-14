@@ -28,6 +28,18 @@ data "template_cloudinit_config" "config" {
         encoding: b64
         content: ${var.docker_compose_file}
         permissions: '0644'
+      - path: /home/ubuntu/wireguard/nginx-certbot.env
+        encoding: b64
+        content: ${var.nginx_certbot_env}
+        permissions: '0644'
+      - path: /home/ubuntu/wireguard/user_conf.d/nginx-dex.conf
+        encoding: b64
+        content: ${var.nginx_dex_config}
+        permissions: '0644'
+      - path: /home/ubuntu/wireguard/user_conf.d/nginx-wg.conf
+        encoding: b64
+        content: ${var.nginx_wg_config}
+        permissions: '0644'
       runcmd:
         - [chown, -R, ubuntu.ubuntu, /home/ubuntu/ ]
         - [ cd, /home/ubuntu/wireguard ]
