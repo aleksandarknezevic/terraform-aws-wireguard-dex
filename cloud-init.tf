@@ -40,10 +40,6 @@ data "template_cloudinit_config" "config" {
         encoding: b64
         content: ${var.nginx_wg_config}
         permissions: '0644'
-      runcmd:
-        - [chown, -R, ubuntu.ubuntu, /home/ubuntu/ ]
-        - [ cd, /home/ubuntu/wireguard ]
-        - [ docker-compose, up, -d ]
     EOF
   }
 }
